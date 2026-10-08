@@ -1,7 +1,23 @@
 const amigos = [];
 
+let nomes = [];
+
 function adicionar() {
-  // TODO ler validar guardar e atualizar
+    const campo = document.getElementById("nome");
+    const nome = campo.value.trim();
+
+    if (nome === "") {
+        alert("Digite um nome.");
+        return;
+    }
+
+    nomes.push(nome);
+
+    const lista = document.getElementById("lista");
+    lista.textContent = nomes.join(", ");
+
+    campo.value = "";
+    campo.focus();
 }
 
 function sortear() {
