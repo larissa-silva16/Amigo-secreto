@@ -28,10 +28,22 @@ function sortear() {
         return;
     }
 
-    let indice = Math.floor(Math.random() * nomes.length);
-    let escolhido = nomes[indice];
+    const indice = Math.floor(Math.random() * nomes.length);
+    const escolhido = nomes[indice];
 
-    let resultado = document.getElementById("lista-sorteio");
-    resultado.textContent = escolhido;
+    document.getElementById("lista-sorteio").textContent = escolhido;
 }
 
+function reiniciar(event) {
+    if (event) {
+        event.preventDefault();
+    }
+
+    nomes.length = 0;
+
+    document.getElementById("nome-amigo").value = "";
+    document.getElementById("lista-amigos").textContent = "";
+    document.getElementById("lista-sorteio").textContent = "";
+
+    document.getElementById("nome-amigo").focus();
+}
