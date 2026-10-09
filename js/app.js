@@ -21,10 +21,17 @@ function adicionar() {
     campo.focus();
 }
 
+
 function sortear() {
-  // TODO validar escolher e exibir
+    if (nomes.length < 2) {
+        alert("Adicione pelo menos dois amigos para sortear!");
+        return;
+    }
+
+    let indice = Math.floor(Math.random() * nomes.length);
+    let escolhido = nomes[indice];
+
+    let resultado = document.getElementById("lista-sorteio");
+    resultado.textContent = escolhido;
 }
 
-function reiniciar(evento) {
-  // TODO impedir a navegação e restaurar o estado
-}
