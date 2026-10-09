@@ -3,17 +3,18 @@ const amigos = [];
 let nomes = [];
 
 function adicionar() {
-    const campo = document.getElementById("nome");
-    const nome = campo.value.trim();
+    let campo = document.getElementById("nome-amigo");
+    let lista = document.getElementById("lista-amigos");
+
+    let nome = campo.value.trim();
 
     if (nome === "") {
-        alert("Digite um nome.");
+        alert("Digite o nome de um amigo!");
         return;
     }
 
     nomes.push(nome);
 
-    const lista = document.getElementById("lista");
     lista.textContent = nomes.join(", ");
 
     campo.value = "";
